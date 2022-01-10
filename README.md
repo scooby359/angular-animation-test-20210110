@@ -40,3 +40,14 @@ import: [BrowserAnimationsModule]
 
 - Can declare multiple animations in the `animations` array
 - Transition keywords - `:enter` when component is created, `:leave` when component is destroyed 
+
+## State Transitions
+
+- Can also use state transitions, e.g. `stateA => stateB`
+- Can be one way or bi-directional (`a => b` or ` a <=> b`)
+- Can use `*` as a wildcard to represent any state
+- Can use `void` to represent not existing on page, to catch creation or destruction, e.g.:
+```
+transition('void => *', [...]), // On creation to any state
+transition('* => void', [...]) // OOn any state to destruction
+```

@@ -18,14 +18,13 @@ import { Card } from 'src/models/card';
       ])
     ]),
     trigger('slideInOutAnimation', [
-      transition(':enter', [
-        style({height: 0, margin: 0, left: '-100%'}),
-        animate('300ms ease-in', style({height:50, margin: 10})),
-        animate('300ms ease-in', style({left: 0}))
+      transition('void => *', [
+        style({transform: 'translateX(-200%)'}),
+        animate('300ms ease-in', style({}))
       ]),
-      transition(':leave', [
+      transition('* => void', [
         style({height: 59, margin: 10}),
-        animate('300ms', style({left: '-100%'})),
+        animate('300ms', style({transform: 'translateX(-200%)'})),
         animate('300ms ease-in', style({height: 0, margin: 0}))
       ])
     ])

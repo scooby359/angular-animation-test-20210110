@@ -1,5 +1,5 @@
-<div class="body">
-  <button (click)="add()">Add Card</button>
+<div class="body" @pageAnimations>
+  <!-- <button (click)="add()">Add Card</button>
   <button (click)="remove()">Remove Card</button>
 
   <div 
@@ -10,5 +10,14 @@
     <span>ID: {{card.id}}</span>
     <span>Time: {{card.timeStamp.toUTCString()}}</span>
     <span><button (click)="deleteCard(card.id)">Delete</button></span>
+  </div> -->
+
+  <div 
+    *ngFor="let card of definedCards" 
+    class="card"
+  >
+    <span>ID: {{card.id}}</span>
+    <span>Time: {{card.timeStamp.toUTCString()}}</span>
   </div>
+
 </div>
